@@ -157,7 +157,7 @@ Backend/
 └── pom.xml
 ```
 
-## Environment Variables
+## Environment Variables..
 
 | Variable | Description |
 |----------|-------------|
