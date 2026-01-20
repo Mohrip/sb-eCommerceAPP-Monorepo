@@ -16,6 +16,7 @@ public class ProductController {
     @Autowired
     ProductService productService;
 
+
     @PostMapping("/admin/categories/{categoryId}/product")
     public ResponseEntity<ProductDTO> addProduct(@RequestBody ProductDTO productDTO, @PathVariable Long categoryId) {
     ProductDTO savedProductDTO = productService.addProduct(categoryId, productDTO);

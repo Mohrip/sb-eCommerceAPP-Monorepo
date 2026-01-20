@@ -22,6 +22,7 @@ import java.util.List;
 @Table(name = "products")
 @ToString
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long productId;

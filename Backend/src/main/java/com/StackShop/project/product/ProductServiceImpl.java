@@ -116,6 +116,7 @@ private ModelMapper modelMapper;
 
     }
 
+
     @Override
     public ProductDTO updateProductImage(Long productId, MultipartFile image) throws IOException {
         Product ProductFromDb = productRepository.findById(productId).orElseThrow(() ->
