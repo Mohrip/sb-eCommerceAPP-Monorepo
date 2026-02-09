@@ -59,7 +59,7 @@ public class AddressServiceImpl implements AddressService {
     @Override
     public AddressDTO updateAddress(Integer addressId, AddressDTO addressDTO) {
         Address addressFromDb = addressRepository.findById(addressId)
-                .orElseThrow(() -> new ResourceNotFoundException("Address", "addressId", addressId));
+                .orElseThrow(() -> new ResourceNotFoundException("Address", "addressId", addressId) );
 
         addressFromDb.setStreet(addressDTO.getStreet());
         addressFromDb.setBuildingName(addressDTO.getBuildingName());
