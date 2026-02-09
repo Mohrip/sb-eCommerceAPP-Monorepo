@@ -106,17 +106,22 @@ public class AuthController {
                 roles.add(userRole);
             } else {
                 strRoles.forEach(role -> {
-                    switch (role) {
+                    // Convert to lowercase for case-insensitive matching
+                    switch (role.toLowerCase()) {
                         case "admin" -> {
                             Role adminRole = roleRepository.findByRoleName(UserRole.ADMIN)
                                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
                             roles.add(adminRole);
                         }
                         case "seller" -> {
-                            Role modRole = roleRepository.findByRoleName(UserRole.SELLER)
+                            Role sellerRole = roleRepository.findByRoleName(UserRole.SELLER)
                                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                            roles.add(modRole);
-
+                            roles.add(sellerRole);
+                        }
+                        case "customer" -> {
+                            Role customerRole = roleRepository.findByRoleName(UserRole.CUSTOMER)
+                                    .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
+                            roles.add(customerRole);
                         }
                         default -> {
                             Role userRole = roleRepository.findByRoleName(UserRole.CUSTOMER)
