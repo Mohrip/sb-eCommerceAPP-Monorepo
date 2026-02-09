@@ -12,6 +12,7 @@ export class SignupComponent {
   username = '';
   email = '';
   password = '';
+  selectedRole = 'customer';
   error = '';
   success = '';
   loading = false;
@@ -22,7 +23,12 @@ export class SignupComponent {
     this.error = '';
     this.success = '';
     this.loading = true;
-    this.authService.signup({ username: this.username, email: this.email, password: this.password }).subscribe({
+    this.authService.signup({
+      username: this.username,
+      email: this.email,
+      password: this.password,
+      role: [this.selectedRole],
+    }).subscribe({
       next: (res) => {
         this.loading = false;
         this.success = res.message;
