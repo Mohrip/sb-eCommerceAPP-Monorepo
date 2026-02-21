@@ -74,7 +74,6 @@ public class OrderServiceImpl implements OrderService {
         order.setPayment(payment);
 
         Order savedOrder = orderRepository.save(order);
-
         List<CartItem> cartItems = cart.getCartItems();
         if (cartItems.isEmpty()) {
             throw new APIException("Cannot place order with empty cart");
