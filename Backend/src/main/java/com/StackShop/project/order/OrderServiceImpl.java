@@ -72,7 +72,6 @@ public class OrderServiceImpl implements OrderService {
         payment.setOrder(order);
         payment = paymentRepository.save(payment);
         order.setPayment(payment);
-
         Order savedOrder = orderRepository.save(order);
         List<CartItem> cartItems = cart.getCartItems();
         if (cartItems.isEmpty()) {
