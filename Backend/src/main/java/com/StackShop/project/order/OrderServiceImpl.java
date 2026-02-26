@@ -78,6 +78,7 @@ public class OrderServiceImpl implements OrderService {
             throw new APIException("Cannot place order with empty cart");
         }
 
+
         List<OrderItem> orderItems = new ArrayList<>();
         for (CartItem cartItem : cartItems) {
             OrderItem orderItem = new OrderItem();
