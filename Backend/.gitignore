@@ -41,11 +41,10 @@ build/
 ### VS Code ###
 .vscode/
 
-# Ignore application.properties
-src/main/resources/application.properties
-src/main/resources/application.yml
-src/test/resources/application.properties
-src/test/resources/application.yml
+# application.properties uses env vars and is safe to commit.
+# Only ignore local overrides if you create them.
+# src/main/resources/application.properties
+src/main/resources/application-local.properties
 # Ignore log files
 logs/
 # Ignore temporary files
@@ -56,4 +55,8 @@ logs/
 
 # Ignore environment variables file
 .env
-.env
+.env.local
+.env.*.local
+
+# Keep example file (safe to commit)
+!.env.example
